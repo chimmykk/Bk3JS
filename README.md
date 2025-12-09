@@ -20,6 +20,7 @@ console.log(digest); // 32-byte Uint8Array
 npm test        # Verify correctness (3119 test vectors)
 npm run example # Hash an image file  
 npm run benchmark  # Performance test
+npm run basic-hash # test a simple hash
 ```
 
 ## Performance

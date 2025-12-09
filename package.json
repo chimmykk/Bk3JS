@@ -6,7 +6,8 @@
   "main": "blake3.js",
   "scripts": {
     "test": "node test.js",
-    "example": "node example.js",
+    "example": "node examples/example.js",
+    "basic-hash":"node examples/basic-hash.js",
     "benchmark": "node benchmark.js"
   },
   "keywords": [

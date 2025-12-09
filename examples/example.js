@@ -3,7 +3,7 @@
  */
 
 import fs from 'fs';
-import { hash } from './blake3.js';
+import { hash } from '../blake3.js';
 
 function buf2hex(buffer) {
     return [...new Uint8Array(buffer)]
