@@ -1,0 +1,21 @@
+{
+  "name": "blake3js",
+  "version": "1.0.0",
+  "description": "Fast BLAKE3",
+  "type": "module",
+  "main": "blake3.js",
+  "scripts": {
+    "test": "node test.js",
+    "example": "node example.js",
+    "benchmark": "node benchmark.js"
+  },
+  "keywords": [
+    "blake3",
+    "hash",
+    "cryptography",
+    "simd",
+    "wasm"
+  ],
+  "author": "",
+  "license": "MIT"
+}
