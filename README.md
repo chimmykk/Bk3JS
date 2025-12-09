@@ -2,7 +2,16 @@
 
  BLAKE3 on js
 
-**~850 MB/s** on 1MB+ inputs. Zero dependencies.
+**~700-850 MB/s** on 1MB+ inputs. Zero dependencies.
+
+If you prefer installing from npm instead of using local files, this project is also published as a package:
+
+https://www.npmjs.com/package/fast-blake3
+
+Repository branch for the npm package:
+
+https://github.com/chimmykk/Bk3JS/tree/fast-blake3-npm
+
 
 ## Quick Start
 
