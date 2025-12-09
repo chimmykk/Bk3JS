@@ -1,13 +1,39 @@
 {
-  "name": "blake3js",
+  "name": "fast-blake3",
   "version": "1.0.0",
-  "description": "Fast BLAKE3",
+  "description": "Fast BLAKE3 cryptographic hash function with TypeScript support",
   "type": "module",
-  "main": "blake3.js",
+  "main": "./dist/esm/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc && cp src/blake3.js dist/esm/blake3.js",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "prepublishOnly": "npm run build",
     "test": "node test.js",
     "example": "node examples/example.js",
-    "basic-hash":"node examples/basic-hash.js",
+    "example:sdk": "node examples/sdk-example.js",
+    "example:sdk:cjs": "node examples/sdk-example-cjs.cjs",
+    "example:sdk:ts": "npx tsx examples/sdk-example.ts",
+    "basic-hash": "node examples/basic-hash.js",
     "benchmark": "node benchmark.js"
   },
   "keywords": [
@@ -15,8 +41,17 @@
     "hash",
     "cryptography",
     "simd",
-    "wasm"
+    "wasm",
+    "typescript",
+    "crypto"
   ],
-  "author": "",
-  "license": "MIT"
+  "author": "Yeite Rilsosing Koireng",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^24.10.2",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
 }

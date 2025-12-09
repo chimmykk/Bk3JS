@@ -1,0 +1,11 @@
+src/
+examples/
+test.js
+testvec.js
+benchmark.js
+image/
+tsconfig.json
+tsconfig.cjs.json
+.git/
+.gitignore
+*.log
