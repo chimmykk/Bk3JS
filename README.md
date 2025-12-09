@@ -23,6 +23,10 @@ const digest = hash(data);
 console.log(digest); // 32-byte Uint8Array
 ```
 
+## Examples
+
+Check `examples/` for Node.js, HTML, web browser, and Next.js implementations.
+
 ## Run
 
 ```bash

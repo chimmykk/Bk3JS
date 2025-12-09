@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fast-blake3 Demo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      min-height: 100vh;
+      color: #fff;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #00d9ff, #00ff88);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #888;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #00d9ff;
+      font-weight: 500;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px 18px;
+      border: none;
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.3);
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+      transition: box-shadow 0.3s;
+    }
+
+    input:focus {
+      box-shadow: 0 0 0 2px #00d9ff;
+    }
+
+    .hash-output {
+      font-family: 'Monaco', 'Menlo', monospace;
+      font-size: 0.85rem;
+      color: #00ff88;
+      word-break: break-all;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>fast-blake3</h1>
+    <p class="subtitle">High-performance BLAKE3 hashing</p>
+
+    <div class="card">
+      <label>Enter text to hash</label>
+      <input type="text" id="input" value="Hello, World!" placeholder="Type something...">
+      <div class="hash-output" id="hash-output"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { hash } from '../../../node_modules/fast-blake3/dist/esm/index.js';
+
+    const input = document.getElementById('input');
+    const hashOutput = document.getElementById('hash-output');
+
+    function updateHash() {
+      const text = input.value || 'Hello, World!';
+      hashOutput.textContent = hash(text);
+    }
+
+    input.addEventListener('input', updateHash);
+    updateHash();
+  </script>
+</body>
+
+</html>
